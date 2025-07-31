@@ -42,6 +42,3 @@ class GalleryImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = GalleryImage
         fields = '__all__'
-
-#not sure about keywords since idk I only want them in news
-#also not sure about news ımage
