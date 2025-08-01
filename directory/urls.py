@@ -2,6 +2,7 @@ from django.urls import path
 from .views import MedicalUnitListView, DetailedMedicalUnitView, DoctorListView, DetailedDoctorView, DoctorsByUnitView, NewsListView, DetailedNewsView, GalleryImageListView 
 
 urlpatterns = [
+
     path('medical-units/', MedicalUnitListView.as_view(), name = 'all-medical-units'),
     path('medical-units/<int:pk>/', DetailedMedicalUnitView.as_view(), name = 'medical-units-detail'),
 
@@ -14,4 +15,5 @@ urlpatterns = [
     path('news/<int:pk>/', DetailedNewsView.as_view(), name = 'news-detail'),
 
     path('gallery-images/',  GalleryImageListView.as_view(), name = 'all-gallery-images')
+
 ]
