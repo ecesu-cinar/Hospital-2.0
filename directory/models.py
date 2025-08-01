@@ -6,7 +6,7 @@ from ckeditor.fields import RichTextField
 class MedicalUnit(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(blank = True)
-    image_url = models.URLField(blank = True)
+    image = models.ImageField(blank=True, upload_to='medical_units/')
 
     def __str__(self):
         return self.name
@@ -16,7 +16,7 @@ class Doctor(models.Model):
     education = models.TextField(blank = True)
     experience = models.TextField(blank = True)
     language = models.TextField(blank = True)
-    image_url = models.URLField(blank = True)
+    image = models.ImageField(blank=True, upload_to='doctors/')
     unit = models.ForeignKey(MedicalUnit, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -30,7 +30,7 @@ class Keyword(models.Model):
 
 class News(models.Model):
     title = models.CharField(max_length=100)
-    main_image_url = models.URLField(blank = False)
+    main_image = models.ImageField(blank=False, upload_to='news_main_images/')
     summary = models.CharField(max_length= 250, blank = False)
     content = RichTextField(blank = False)
     author = models.ForeignKey(Doctor, on_delete=models.SET_NULL, null=True, blank=True)
@@ -45,7 +45,7 @@ class News(models.Model):
     
 class GalleryImage(models.Model):
     description = models.CharField(max_length = 100, blank = False)
-    image_url = models.URLField(blank = False)
+    image =  models.ImageField(blank=False, upload_to='gallery/')
     uploaded_at = models.DateTimeField(auto_now_add = True)
     alt_text = models.CharField(max_length=100, blank=True)
 

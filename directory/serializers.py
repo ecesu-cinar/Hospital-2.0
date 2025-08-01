@@ -4,8 +4,7 @@ from .models import MedicalUnit , Doctor , Keyword , News , GalleryImage
 class MedicalUnitSerializer(serializers.ModelSerializer):
     class Meta:
         model = MedicalUnit
-        fields = ['id' , 'name' , 'image_url']
-
+        fields = ['id' , 'name' , 'image']
 class DetailedMedicalUnitSerializer(serializers.ModelSerializer):
     class Meta:
         model = MedicalUnit
@@ -14,7 +13,7 @@ class DetailedMedicalUnitSerializer(serializers.ModelSerializer):
 class DoctorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Doctor
-        fields = ['id' , 'name' , 'image_url']
+        fields = ['id' , 'name' , 'image']
     
 class DetailedDoctorSerializer(serializers.ModelSerializer):
     class Meta:
@@ -30,7 +29,7 @@ class NewsSerializer(serializers.ModelSerializer):
      
     class Meta:
         model = News
-        fields = ['id' , 'title' , 'main_image_url' , 'summary' , 'keywords']
+        fields = ['id' , 'title' , 'main_image' , 'summary' , 'keywords']
 
 
 class DetailedNewsSerializer(serializers.ModelSerializer):
