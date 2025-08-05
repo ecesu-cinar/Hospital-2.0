@@ -6,8 +6,8 @@ function App() {
     <div>
       <Navbar />
       <div className="bg-blue-500 text-white p-8 text-center">
-        <h1 className="text-4xl font-bold">Hospital Management System</h1>
-        <p className="mt-4 text-xl">Tailwind CSS is working! 🎉</p>
+        <h1 className="text-4xl font-bold">Hospital 2.0</h1>
+        <p className="mt-4 text-xl">Tailwind çalışıyor rahhhhh</p>
       </div>
     </div>
   );
