@@ -1,5 +1,6 @@
 import './App.css';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <h1 className="text-4xl font-bold">Hospital 2.0</h1>
         <p className="mt-4 text-xl">Tailwind çalışıyor rahhhhh</p>
       </div>
+      <Footer />
     </div>
   );
 }
