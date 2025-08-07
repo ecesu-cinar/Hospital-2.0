@@ -6,8 +6,8 @@ import { FaInstagram,FaFacebook,FaXTwitter  } from "react-icons/fa6";
 const Footer = () => {
     return(
         <div>
-            <div className='bg-primary'>
-                <h1>Hakkımızda</h1>
+            <div className='bg-primary text-white'>
+                <h1 className='text-center mx-auto p-4 md:p-9 md:text-3xl font-semibold'>Hakkımızda</h1>
                 <h3>Akademi Cerrahi Tıp Merkezi web sayfamız üzerinden, hastanemizde verdiğimiz hizmetlere ilişkin bilgilere ulaşabilirsiniz.</h3>
                 <h1>Bize Ulaşın</h1>
                 <ul>
