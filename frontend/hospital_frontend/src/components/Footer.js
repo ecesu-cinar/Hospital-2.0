@@ -6,33 +6,33 @@ import { FaInstagram,FaFacebook,FaXTwitter  } from "react-icons/fa6";
 const Footer = () => {
     return(
         <div>
-            <div className='bg-primary text-white'>
-                <h1 className='text-center mx-auto p-4 md:p-9 md:text-3xl font-semibold'>Hakkımızda</h1>
-                <h3>Akademi Cerrahi Tıp Merkezi web sayfamız üzerinden, hastanemizde verdiğimiz hizmetlere ilişkin bilgilere ulaşabilirsiniz.</h3>
-                <h1>Bize Ulaşın</h1>
-                <ul>
+            <div className='bg-primary text-white '>
+                <h1 className='text-center mx-auto p-4 md:p-9 text-xl md:text-3xl font-semibold'>Hakkımızda</h1>
+                <h3 className='text-center mx-auto px-4 md:px-12 text-sm md:text-xl font-normal' >Akademi Cerrahi Tıp Merkezi web sayfamız üzerinden, hastanemizde verdiğimiz hizmetlere ilişkin bilgilere ulaşabilirsiniz.</h3>
+                <h1 className='text-center mx-auto pt-4 pb-7 md:pt-9 md:pb-9 text-xl md:text-3xl font-semibold'>Bize Ulaşın</h1>
+                <ul className='flex justify-center text-2xl md:text-3xl space-x-12 pb-7 md:pb-8 '>
                     <li>
-                        <a href='https://www.instagram.com/ozelakademitipmerkezi/'>
+                        <a href='https://www.instagram.com/ozelakademitipmerkezi/'  className='hover:text-secondary transition-colors duration-200'>
                             <FaInstagram />
                         </a>
                     </li>
                     <li>
-                        <a href='https://x.com/akademitip'>
+                        <a href='https://x.com/akademitip' className='hover:text-secondary transition-colors duration-200'>
                             <FaXTwitter />
                         </a>
                     </li>
                     <li>
-                        <a href='https://www.facebook.com/ozelakademitipmerkezi/'>
+                        <a href='https://www.facebook.com/ozelakademitipmerkezi/' className='hover:text-secondary transition-colors duration-200'>
                             <FaFacebook />
                         </a>
                     </li>
                 </ul>
 
-                <p>
-                    Son Güncelleme: 19.12.2024 / Editör: Eda Ecesu ÇINAR.
+                <p className='text-center text-xs md:text-base md:pt-4'>
+                    Son Güncelleme: 07.08.2025 / Editör: Eda Ecesu ÇINAR
                 </p>
 
-                <p>
+                <p className='text-center text-xs md:text-base pb-3'>
                     İletişim: ecesu.cinar24@gmail.com
                 </p>
 
