@@ -8,3 +8,10 @@ A better version of my old hospital website that allows patients to get informat
 - View hospital photo gallery
 - Get detailed information about hospital services
 - See doctors and their information
+
+## Tech Stack
+
+- **Frontend:** React  
+- **Image Storage:** Cloudinary  
+- **Backend:** Django + Django REST Framework  
+- **Database:** PostgreSQL
