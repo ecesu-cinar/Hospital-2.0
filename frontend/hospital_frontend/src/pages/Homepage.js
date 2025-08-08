@@ -25,8 +25,35 @@ const Homepage = () => {
                     href ="/Contact"
                     className='text-white inline-block border border-white rounded-full m-10 md:mx-auto px-8 py-1.5 text-base bg-transparent relative cursor-pointer transition-all duration-100 hover:bg-opacity-15 hover:bg-white'
                 >
-                     Daha fazla bilgi için bize ulaşın 
+                    Daha fazla bilgi için bize ulaşın 
                 </a>
+
+            </div>
+
+            <div>
+                <h1
+                    className='text-primary text-2xl p-6 font-medium'
+                >
+                    Haberler
+                </h1>
+                
+            </div>
+
+            <div className='bg-primary'>
+                <h1
+                    className='text-white text-2xl p-6 font-medium'
+                >
+                    Galeri
+                </h1>
+
+            </div>
+
+            <div>
+                <h1
+                    className=' text-2xl p-6 font-medium'
+                >
+                    25 yılı aşkın süredir hizmetinizdeyiz 
+                </h1>
 
             </div>
 
