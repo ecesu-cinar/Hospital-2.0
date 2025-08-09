@@ -1,5 +1,7 @@
 import React from 'react';
 import Foto from '../assets/akad.jpg'
+import Gallery from '../components/Gallery'
+
 
 const Homepage = () => {
     return(
@@ -39,12 +41,8 @@ const Homepage = () => {
                 
             </div>
 
-            <div className='bg-primary'>
-                <h1
-                    className='text-white text-2xl p-6 font-medium'
-                >
-                    Galeri
-                </h1>
+            <div>
+                <Gallery />
 
             </div>
 

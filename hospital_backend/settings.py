@@ -50,16 +50,19 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'directory',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',    
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'hospital_backend.urls'
@@ -214,3 +217,8 @@ STORAGES = {
         "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
     },
 }
+
+#CORS settings
+CORS_ALLOWED_ORIGINS = [
+    os.getenv('CORS_ALLOWED_ORIGINS'),
+]
