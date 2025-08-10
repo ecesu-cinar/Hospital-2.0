@@ -1,6 +1,7 @@
 import React from 'react';
 import Foto from '../assets/akad.jpg'
 import Gallery from '../components/Gallery'
+import NewsCatalog from '../components/NewsCatalog'
 
 
 const Homepage = () => {
@@ -33,11 +34,8 @@ const Homepage = () => {
             </div>
 
             <div>
-                <h1
-                    className='text-primary text-2xl p-6 font-medium'
-                >
-                    Haberler
-                </h1>
+                
+                <NewsCatalog />
                 
             </div>
 
