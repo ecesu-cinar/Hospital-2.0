@@ -38,7 +38,7 @@ const Gallery = () => {
                 <p className='p-6'>
                     Loading Gallery...
                 </p>
-            ):(
+            ): galleryImages.length > 0 && (
                 <div className='p-6'> 
                     <div>
                         {galleryImages.map(image =>(
