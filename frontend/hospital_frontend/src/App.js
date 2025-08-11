@@ -8,6 +8,7 @@ import AboutUs from './pages/AboutUs';
 import MedicalUnits from './pages/MedicalUnits';
 import Doctors from './pages/Doctors';
 import Contact from './pages/Contact';
+import '@splidejs/splide/css';
 
 function App() {
   return (
