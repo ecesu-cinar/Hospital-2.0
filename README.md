@@ -11,7 +11,7 @@ A better version of my old hospital website that allows patients to get informat
 
 ## Tech Stack
 
-- **Frontend:** React  
+- **Frontend:** React + [Splide.js](https://splidejs.com/) (for sliders/carousels)  
 - **Image Storage:** Cloudinary  
 - **Backend:** Django + Django REST Framework  
 - **Database:** PostgreSQL
