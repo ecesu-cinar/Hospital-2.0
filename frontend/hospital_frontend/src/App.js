@@ -11,6 +11,10 @@ import Contact from './pages/Contact';
 import '@splidejs/splide/css';
 
 function App() {
+  const NewsDetail = () => {
+    return <div>News detail page - coming soon</div>;
+  };
+  
   return (
     <Router>
       <div className="App">
@@ -18,11 +22,12 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/news" element={<News />} />
-            <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/medical-units" element={<MedicalUnits />} />
-            <Route path="/doctors" element={<Doctors />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/haberler" element={<News />} />
+            <Route path="/haberler/:id" element={<NewsDetail />} />
+            <Route path="/hakkımızda" element={<AboutUs />} />
+            <Route path="/medikal-unitler" element={<MedicalUnits />} />
+            <Route path="/doctorlar" element={<Doctors />} />
+            <Route path="/iletisim" element={<Contact />} />
           </Routes>
         </main>
         <Footer />

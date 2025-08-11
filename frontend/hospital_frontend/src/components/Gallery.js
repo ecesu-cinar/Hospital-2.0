@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getGalleryImages } from '../api/GalleryApi';
 import { Splide , SplideSlide} from '@splidejs/react-splide'
-import { MdPadding } from 'react-icons/md';
 
 const Gallery = () => {
 
@@ -30,7 +29,7 @@ const Gallery = () => {
         <div className='bg-primary'>
             <div className='bg-primary'>
                 <h1
-                    className='text-white text-2xl md:text-4xl pt-8 md:pt-12 md:pb-5 font-medium'
+                    className='text-white text-2xl md:text-4xl pt-8 md:pt-12 md:pb-5 font-bold'
                 >
                     Galeri
                 </h1>
@@ -38,7 +37,7 @@ const Gallery = () => {
 
             {loading?(
                 <p className='md:p-6 text-white text-xl'>
-                    Loading Gallery...
+                    Galeri yükleniyor, lütfen bekleyin...
                 </p>
             ): galleryImages.length > 0 && (
                 <div className='px-8 pt-8 pb-12 md:py-12 bg-primary mx-5 md:mx-10'> 
