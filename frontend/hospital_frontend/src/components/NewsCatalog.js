@@ -6,7 +6,7 @@ const NewsCatalog = () => {
     const[news , setNews] = useState([]);
     const[loading, setLoading] = useState(true);
     const navigate = useNavigate(); 
-    
+
     useEffect(() => {
         const fetchNews = async() =>{
             try{
@@ -65,7 +65,6 @@ const NewsCatalog = () => {
                 )}
 
             </div>
-
 
         </div>
     );
