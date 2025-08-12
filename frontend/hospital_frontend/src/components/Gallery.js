@@ -11,7 +11,6 @@ const Gallery = () => {
         const fetchGallery = async() => {
             try{
                 const images = await getGalleryImages();
-                console.log('GalleryImages:',images);
                 setGalleryImages(images);
             } catch (error){
                 console.error('Failed to fetch gallery images:', error);
@@ -40,7 +39,7 @@ const Gallery = () => {
                     Galeri yükleniyor, lütfen bekleyin...
                 </p>
             ): galleryImages.length > 0 && (
-                <div className='px-8 pt-8 pb-12 md:py-12 bg-primary mx-5 md:mx-10'> 
+                <div className='px-8 pt-8 pb-12 md:px-16 md:py-12 bg-primary mx-5 md:mx-10'> 
                     <Splide options = {{
                         type: 'loop',
                         autoplay: true,

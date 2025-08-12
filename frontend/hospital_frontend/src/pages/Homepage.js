@@ -46,7 +46,7 @@ const Homepage = () => {
 
             <div>
                 <h1
-                    className=' text-2xl p-6 font-medium'
+                    className='text-primary md:text-5xl text-2xl p-24 md:p-56 font-medium'
                 >
                     25 yılı aşkın süredir hizmetinizdeyiz 
                 </h1>
