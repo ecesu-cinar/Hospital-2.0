@@ -29,13 +29,13 @@ const Navbar = () => {
                         </a>
                     </li>
                     <li>
-                        <a href="/hakkımızda" className="text-third hover:text-secondary relative group transition-colors duration-300">
+                        <a href="/hakkimizda" className="text-third hover:text-secondary relative group transition-colors duration-300">
                             Hakkımızda
                             <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300 ease-out"></span>
                         </a>
                     </li>
                     <li>
-                        <a href="/tıbbi-birimler" className="text-third hover:text-secondary relative group transition-colors duration-300">
+                        <a href="/tibbi-birimler" className="text-third hover:text-secondary relative group transition-colors duration-300">
                             Tıbbi Birimler
                             <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300 ease-out"></span>
                         </a>
@@ -47,7 +47,7 @@ const Navbar = () => {
                         </a>
                     </li>
                     <li>
-                        <a href="/iletişim" className="text-third hover:text-secondary relative group transition-colors duration-300">
+                        <a href="/iletisim" className="text-third hover:text-secondary relative group transition-colors duration-300">
                             İletişim
                             <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300 ease-out"></span>
                         </a>
@@ -69,12 +69,12 @@ const Navbar = () => {
                         </a>
                     </li>
                     <li>
-                        <a href="/hakkımızda" className="block text-third hover:text-secondary">
+                        <a href="/hakkimizda" className="block text-third hover:text-secondary">
                             Hakkımızda
                         </a>
                     </li>
                     <li>
-                        <a href="/tıbbi-birimler" className="block text-third hover:text-secondary">
+                        <a href="/tibbi-birimler" className="block text-third hover:text-secondary">
                             Tıbbi Birimler
                         </a>
                     </li>
@@ -84,7 +84,7 @@ const Navbar = () => {
                         </a>
                     </li>
                     <li>
-                        <a href="/iletişim" className="block text-third hover:text-secondary">
+                        <a href="/iletisim" className="block text-third hover:text-secondary">
                             İletişim
                         </a>
                     </li>
