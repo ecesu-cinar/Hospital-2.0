@@ -1,5 +1,5 @@
 import React from 'react';
-import Foto from '../assets/akad.jpg'
+import Foto from '../assets/photos/akad.jpg'
 import Gallery from '../components/Gallery'
 import NewsCatalog from '../components/NewsCatalog'
 
