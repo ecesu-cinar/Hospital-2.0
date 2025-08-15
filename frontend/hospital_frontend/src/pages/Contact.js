@@ -85,7 +85,7 @@ const Contact = () => {
                                 <h3
                                     className='text-base md:text-xl font-medium select-text'
                                 >
-                                    (0 212) 474 02 66
+                                    (212) 474 02 66
                                 </h3>
 
                             </a>
