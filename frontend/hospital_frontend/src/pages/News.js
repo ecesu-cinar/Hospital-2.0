@@ -15,7 +15,7 @@ const News = () => {
         const fetchNews = async() =>{
             try{
                 const news = await getNews();
-
+                console.log(news);
                 const sorted = [...(news || [])].sort((a, b) => b.id - a.id);
                 
                 setNews(sorted);
@@ -64,40 +64,64 @@ const News = () => {
                                         loading="lazy"
                                     />
 
-                                    <div className="p-4">
-                                        <h3 className="font-semibold text-xl text-primary">{haber.title}</h3>
-                                        <p className="mt-2 text-sm text-gray-600">{haber.summary}</p>
-                                        <span className="mt-3 inline-flex items-center text-xs font-semibold text-secondary cursor-pointer">
-                                            Devamını Oku
-                                            <FaArrowRightLong  className="ml-1 translate-y-[1px]" strokeWidth={1}/>
-                                        </span>
+                                    <div className="p-4 flex flex-col justify-between h-48">
+                                        <div>
+                                            <h3 className="font-semibold text-xl text-primary">{haber.title}</h3>
+                                            <p className="mt-2 text-sm text-gray-600 line-clamp-3">{haber.summary}</p>
+                                        </div>
+                                        <div className="flex justify-between items-center mt-4">
+                                            <div className="flex flex-wrap gap-1">
+                                                {haber.keywords && haber.keywords.slice(0, 2).map((keyword, index) => (
+                                                    <span key={index} className="px-2 py-1 bg-gray-100 text-xs text-gray-600 rounded">
+                                                        {keyword}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                            <span className="items-center inline-flex text-xs font-semibold text-secondary cursor-pointer">
+                                                Devamını Oku
+                                                <FaArrowRightLong  className="ml-1 translate-y-[1px]" strokeWidth={1}/>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             ))}
                         </div>
 
-                        <div>
+                        <div
+                            className='mx-48 mb-32'
+                        >
                             {rest.map(haber => (
                                 <div
                                     key={haber.id}
                                     onClick={() => handleNewsClick(haber.id)}
-                                    className="cursor-pointer rounded overflow-hidden bg-white shadow-lg md:hover:shadow-xl transition"
+                                    className="flex items-stretch cursor-pointer rounded overflow-hidden bg-white shadow-lg md:hover:shadow-xl transition"
                                 >
                                 
                                     <img
                                         src={haber.main_image_url || haber.main_image}   // use the one your API has
                                         alt={haber.title}
-                                        className="w-full h-56 object-cover"
+                                        className="w-48 h-48 object-cover"
                                         loading="lazy"
                                     />
 
-                                    <div className="p-4">
-                                        <h3 className="font-semibold text-xl text-primary">{haber.title}</h3>
-                                        <p className="mt-2 text-sm text-gray-600">{haber.summary}</p>
-                                        <span className="mt-3 inline-flex items-center text-xs font-semibold text-secondary cursor-pointer">
-                                            Devamını Oku
-                                            <FaArrowRightLong  className="ml-1 translate-y-[1px]" strokeWidth={1}/>
-                                        </span>
+                                    <div className="p-4 flex-1 flex flex-col justify-between">
+                                        <div className='text-left my-2 ml-1'>
+                                            <h3 className="font-semibold text-xl text-primary">{haber.title}</h3>
+                                            <p className="mt-2 text-sm text-gray-600  line-clamp-3">{haber.summary}</p>
+                                        </div>
+                                        <div className="flex justify-between items-center mt-4">
+                                            <div className="flex flex-wrap gap-1">
+                                                {haber.keywords && haber.keywords.slice(0, 2).map((keyword, index) => (
+                                                    <span key={index} className="px-2 py-1 bg-gray-100 text-xs text-gray-600 rounded">
+                                                        {keyword}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                            <span className="items-center inline-flex text-xs font-semibold text-secondary cursor-pointer">
+                                                Devamını Oku
+                                                <FaArrowRightLong  className="ml-1 translate-y-[1px]" strokeWidth={1}/>
+                                            </span>
+                                        </div>
                                     </div>
 
                                 </div>
