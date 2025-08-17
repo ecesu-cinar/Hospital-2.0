@@ -45,7 +45,7 @@ const News = () => {
 
             <div>
                 {loading?(
-                    <p className='text-xl font-medium text-primary'>
+                    <p className='text-3xl font-medium text-primary'>
                         Haberler yükleniyor, lütfen bekleyin...
                     </p>
                 ): news.length > 0 ?(
