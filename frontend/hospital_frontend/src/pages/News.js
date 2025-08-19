@@ -140,7 +140,11 @@ const News = () => {
 
                     </div>
                 ):(
-                    <p>Şu anda görüntülenecek haber bulunamadı.</p>
+                    <p
+                        className='text-3xl font-medium text-primary mx-20 my-20'
+                    >
+                        Şu anda görüntülenecek haber bulunamadı.
+                    </p>
                 )}
 
             </div>

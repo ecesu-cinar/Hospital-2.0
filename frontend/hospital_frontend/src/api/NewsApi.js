@@ -13,7 +13,7 @@ export const getNews = async() => {
 export const getDetailedNews = async(newsId) => {
     try{
         const response = await api.get(`news/${newsId}/`);
-        return response.data.results;
+        return response.data;
     } catch(error) {
         console.error('Error fetching detailed news:', error);
         throw error;

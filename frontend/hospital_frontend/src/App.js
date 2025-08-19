@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Homepage from './pages/Homepage';
 import News from './pages/News';
+import DetailedNews from './pages/DetailedNews';
 import AboutUs from './pages/AboutUs';
 import MedicalUnits from './pages/MedicalUnits';
 import Doctors from './pages/Doctors';
@@ -11,9 +12,6 @@ import Contact from './pages/Contact';
 import '@splidejs/splide/css';
 
 function App() {
-  const NewsDetail = () => {
-    return <div>News detail page - coming soon</div>;
-  };
   
   return (
     <Router>
@@ -23,7 +21,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/haberler" element={<News />} />
-            <Route path="/haberler/:id" element={<NewsDetail />} />
+            <Route path="/haberler/:id" element={<DetailedNews />} />
             <Route path="/hakkimizda" element={<AboutUs />} />
             <Route path="/tibbi-birimler" element={<MedicalUnits />} />
             <Route path="/hekimler" element={<Doctors />} />
