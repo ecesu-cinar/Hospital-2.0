@@ -48,25 +48,48 @@ const DetailedNews = () => {
             ) : news ? (
                 <div>
                     <div
-                    className='m-10'
+                    className='m-10 md:m-20'
                     >
-                        <h1 className='text-xl md:text-3xl text-bold text-primary'>
+                        <h1 className='text-xl md:text-3xl font-semibold text-primary'>
                             {news.title}
                         </h1>
 
-                        <p className='text-xl md:text-sm text-primary/5'>
-                            {news?.author}
-                        </p>
+                        {news?.author?.name && (
+                            <p className='my-1 text-base md:text-xl font-medium text-primary/75'>
+                            {news.author.name}
+                            </p>
+                        )}
+
+                        {news?.medical_unit?.name && (
+                            <p className='my-1 text-base md:text-xl font-medium text-primary/75'>
+                            {news.medical_unit.name}
+                            </p>
+                        )}
 
                     </div>
 
-                    <div className="mx-10">
+                    <div className="mt-10 mb-20 mx-5  md:my-20 md:mx-20 md:text-xl text-center">
                         <div 
-                            className="prose prose-lg max-w-none"
+                            className="prose prose-lg max-w-none mx-auto [&_img]:mx-auto [&_img]:block"
                             dangerouslySetInnerHTML={{ 
                                 __html: DOMPurify.sanitize(news.content) 
                             }} 
                         />
+                    </div>
+
+                    <div className="flex justify-start items-start mx-5 md:mx-20 mb-10">
+                        {news.keywords && news.keywords.length > 0 && (
+                            <ul className="flex flex-wrap gap-2">
+                                {news.keywords.map((keyword, index) => (
+                                    <li 
+                                        key={index} 
+                                        className="bg-secondary text-white text-sm md:text-base px-3 py-1 rounded-lg"
+                                    >
+                                        {keyword}
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
                     </div>
 
                 </div>

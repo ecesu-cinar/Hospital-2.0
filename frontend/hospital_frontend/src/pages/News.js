@@ -98,24 +98,24 @@ const News = () => {
                         </h2>
 
                         <div
-                            className='max-w-6xl mx-auto px-4 md:px-6 mb-32 pt-2'
+                            className='max-w-6xl mx-auto px-4 md:px-6 mb-16 md:mb-32 pt-2'
                         >
                             {rest.map(haber => (
                                 <div
                                     key={haber.id}
                                     onClick={() => handleNewsClick(haber.id)}
-                                    className="flex flex-col sm:flex-row my-6 items-stretch cursor-pointer rounded overflow-hidden bg-white shadow-lg md:hover:shadow-xl transition"
+                                    className="flex flex-col sm:flex-row my-9 md:my-6 items-stretch cursor-pointer rounded overflow-hidden bg-white shadow-lg md:hover:shadow-xl transition"
                                 >
                                 
                                     <img
                                         src={haber.main_image_url || haber.main_image}   // use the one your API has
                                         alt={haber.title}
-                                        className="w-48 h-48 object-cover"
+                                        className="w-full h-64 md:w-48 md:h-48 object-cover"
                                         loading="lazy"
                                     />
 
                                     <div className="p-4 flex-1 flex flex-col justify-between">
-                                        <div className='text-left my-2 sm:my-2 sm:ml-1'>
+                                        <div className='text-center md:text-left my-2 sm:my-2 sm:ml-1'>
                                             <h3 className="font-semibold text-xl text-primary leading-snug">{haber.title}</h3>
                                             <p className="mt-2 text-sm text-gray-600  line-clamp-2">{haber.summary}</p>
                                         </div>
@@ -141,7 +141,7 @@ const News = () => {
                     </div>
                 ):(
                     <p
-                        className='text-3xl font-medium text-primary mx-20 my-20'
+                        className='text-3xl font-medium text-primary m-10 md:m-20'
                     >
                         Şu anda görüntülenecek haber bulunamadı.
                     </p>

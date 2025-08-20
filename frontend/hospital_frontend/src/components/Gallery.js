@@ -35,10 +35,10 @@ const Gallery = () => {
             </div>
 
             {loading?(
-                <p className='md:p-6 text-white text-xl'>
+                <p className='text-3xl font-medium text-white mx-20 my-20'>
                     Galeri yükleniyor, lütfen bekleyin...
                 </p>
-            ): galleryImages.length > 0 && (
+            ): galleryImages.length > 0 ? (
                 <div className='px-8 pt-8 pb-12 md:px-16 md:py-12 bg-primary mx-5 md:mx-10'> 
                     <Splide options = {{
                         type: 'loop',
@@ -72,9 +72,13 @@ const Gallery = () => {
                         ))}
                     </Splide>
                 </div>
-            )
-            
-            }
+            ):(
+                <p 
+                    className='text-3xl font-medium text-white mx-20 my-20'
+                >
+                    Şu anda görüntülenecek haber bulunamadı.
+                </p>
+            )}
         </div>
     )
 }

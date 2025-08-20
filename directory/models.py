@@ -6,7 +6,7 @@ from ckeditor.fields import RichTextField
 class MedicalUnit(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(blank = True)
-    image = models.ImageField(blank=True, upload_to='medical_units/')
+    image = models.ImageField(blank=False, upload_to='medical_units/')
 
     def __str__(self):
         return self.name
@@ -16,7 +16,7 @@ class Doctor(models.Model):
     education = models.TextField(blank = True)
     experience = models.TextField(blank = True)
     language = models.TextField(blank = True)
-    image = models.ImageField(blank=True, upload_to='doctors/')
+    image = models.ImageField(blank=False, upload_to='doctors/')
     unit = models.ForeignKey(MedicalUnit, on_delete=models.CASCADE)
 
     def __str__(self):

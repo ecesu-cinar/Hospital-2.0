@@ -10,19 +10,49 @@ class MedicalUnitSerializer(serializers.ModelSerializer):
     def to_representation(self, instance):
         data = super().to_representation(instance)
 
-        try: 
-            response = requests.head(data['image'])
-            if response.status_code != 200:
-                instance.delete()
-                return None
-        except:
-            instance.delete()
-            return None
+        image_url = data.get('image')
+        
+        if image_url:
+            try:
+                response = requests.head(image_url)
+                if response.status_code != 200:
+                    # Image URL exists but is broken — mark it as missing
+                    data['image'] = None
+            except:
+                data['image'] = None
+        else:
+            
+            data['image'] = None
         
         return data
     
 
+class DoctorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Doctor
+        fields = ['id' , 'name' , 'image']
+
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+
+        image_url = data.get('image')
+
+        if image_url:
+            try:
+                response = requests.head(image_url)
+                if response.status_code != 200:
+                    # Image URL exists but is broken — mark it as missing
+                    data['image'] = None
+            except:
+                data['image'] = None
+        else:
+            
+            data['image'] = None
+
+        return data
+
 class DetailedMedicalUnitSerializer(serializers.ModelSerializer):
+    doctors = DoctorSerializer(source='doctor_set', many=True, read_only=True)
     class Meta:
         model = MedicalUnit
         fields = '__all__'
@@ -41,25 +71,6 @@ class DetailedMedicalUnitSerializer(serializers.ModelSerializer):
         
         return data
 
-class DoctorSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Doctor
-        fields = ['id' , 'name' , 'image']
-
-    def to_representation(self, instance):
-        data = super().to_representation(instance)
-
-        try: 
-            response = requests.head(data['image'])
-            if response.status_code != 200:
-                instance.delete()
-                return None
-        except:
-            instance.delete()
-            return None
-        
-        return data
-    
 class DetailedDoctorSerializer(serializers.ModelSerializer):
     unit = MedicalUnitSerializer(read_only=True)
 
@@ -112,10 +123,22 @@ class DetailedNewsSerializer(serializers.ModelSerializer):
         read_only=True,
         slug_field='name'
     )
+
+    medical_unit = MedicalUnitSerializer(read_only=True)
+    author = DoctorSerializer(read_only=True)
     
     class Meta:
         model = News
-        fields = '__all__'
+        fields = [
+            'id',
+            'title',
+            'main_image',
+            'summary',
+            'content',
+            'keywords',
+            'medical_unit',
+            'author',
+        ]
 
 class GalleryImageSerializer(serializers.ModelSerializer):
     class Meta:
