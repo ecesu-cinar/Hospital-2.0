@@ -18,4 +18,4 @@ export const getDetailedDoctor = async(doctorId) => {
         console.error("Error fetching the details for teh specific doctor:", error);
         throw error;
     }
-}
+};

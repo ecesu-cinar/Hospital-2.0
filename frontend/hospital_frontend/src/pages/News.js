@@ -15,7 +15,6 @@ const News = () => {
         const fetchNews = async() =>{
             try{
                 const news = await getNews();
-                console.log(news);
                 const sorted = [...(news || [])].sort((a, b) => b.id - a.id);
                 
                 setNews(sorted);

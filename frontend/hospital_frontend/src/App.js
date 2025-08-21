@@ -7,7 +7,9 @@ import News from './pages/News';
 import DetailedNews from './pages/DetailedNews';
 import AboutUs from './pages/AboutUs';
 import MedicalUnits from './pages/MedicalUnits';
+import DetailedMedicalUnits from './pages/DetailedMedicalUnits'
 import Doctors from './pages/Doctors';
+import DetailedDoctors from './pages/DetailedDoctors'
 import Contact from './pages/Contact';
 import '@splidejs/splide/css';
 
@@ -24,7 +26,9 @@ function App() {
             <Route path="/haberler/:id" element={<DetailedNews />} />
             <Route path="/hakkimizda" element={<AboutUs />} />
             <Route path="/tibbi-birimler" element={<MedicalUnits />} />
+            <Route path="/tibbi-birimler/:id" elemnt = {<DetailedMedicalUnits/>}/>
             <Route path="/hekimler" element={<Doctors />} />
+            <Route path="/hekimler/:id" elemnt = {<DetailedDoctors />}/>
             <Route path="/iletisim" element={<Contact />} />
           </Routes>
         </main>
