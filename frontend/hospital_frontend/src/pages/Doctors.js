@@ -45,22 +45,32 @@ const Doctors = () => {
                             Hekimler yükleniyor, lütfen bekleyin...
                         </p>
                     ): doctors.length > 0 ? (
-                        <div>
-                            <div>
+                        <div className='mx-6'>
+                            <div
+                                className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 py-16 px-4 md:px-6 max-w-6xl mx-auto rounded-lg '
+                            >
 
                                 {doctors.map( doctor => (
                                     <div
+                                        className='cursor-pointer rounded overflow-hidden bg-primary/10 shadow-lg md:hover:shadow-xl transition '
                                         key = {doctor.id}
                                         onClick={() => handleDoctorsClick(doctor.id)}
                                     >
-                                        <img
-                                            src={doctor.image}
-                                            loading = "lazy"
-                                            alt='Hekimin fotoğrafı'
-                                        />
+                                        <div
+                                            className='p-4'
+                                        >
+                                            <img
+                                                src={doctor.image}
+                                                loading = "lazy"
+                                                alt='Hekimin fotoğrafı'
+                                                className='w-full h-64 object-cover rounded'
+                                            />
+                                        </div>
 
                                         <div>
-                                            <h1>
+                                            <h1
+                                                className='font-semibold text-xl text-primary leading-snug mt-1 mb-5 mx-3'
+                                            >
                                                 {doctor.name}
                                             </h1>
                                         </div>
@@ -80,9 +90,6 @@ const Doctors = () => {
                     )}
 
                 </div>
-
-            
-
 
             </section>
 
