@@ -80,7 +80,6 @@ const Doctors = () => {
 
                             </div>
                         </div>
-
                     ):(
                         <p
                             className='text-3xl font-medium text-primary m-10 md:m-20'
@@ -88,12 +87,8 @@ const Doctors = () => {
                             Şu anda görüntülenecek hekim bulunamadı.
                         </p>
                     )}
-
                 </div>
-
             </section>
-
-
         </div>
     );
 };
