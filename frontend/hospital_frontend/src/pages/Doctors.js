@@ -12,8 +12,10 @@ const Doctors = () => {
     useEffect(() => {
         const fetchDoctors = async() => {
             try{
-                const doctors = await getDoctors();
-                console.log(doctors);
+                const data = await getDoctors();
+
+                const doctors = [...data].sort((a, b) => a.id - b.id);
+
                 setDoctors(doctors);
 
             }catch(error){

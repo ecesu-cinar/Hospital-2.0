@@ -54,10 +54,46 @@ const DetailedDoctors = () => {
 
                         <div>
                             <div>
+                                <img
+                                    src={doctor.image}
+                                    alt="Hekimin fotoğrafı"
+                                    loading='lazy'
+                                    className=''
+                                />
+
+                                <div>
+                                    <h1>{doctor.name}</h1>
+                                    <h2>{doctor.unit.name}</h2>
+                                </div>
+                                
 
                             </div>
 
+
                             <div>
+                                
+                                <h1>Hekim Hakkında</h1>
+                                
+                                {doctor.education && (
+                                    <div>
+                                        <h1>Eğitim</h1>
+                                        <p className="whitespace-pre-line">{doctor.education}</p>
+                                    </div>
+                                )}
+
+                                {doctor.experience && (
+                                    <div>
+                                        <h1>Mesleki Deneyim</h1>
+                                        <p className="whitespace-pre-line">{doctor.experience}</p>
+                                    </div>
+                                )}
+
+                                {doctor.language && (
+                                    <div>
+                                        <h1>Yabancı Dil</h1>
+                                        <p className="whitespace-pre-line">{doctor.language}</p>
+                                    </div>
+                                )}         
 
                             </div>
 
