@@ -7,7 +7,7 @@ import DOMPurify from 'dompurify';
 
 const DetailedNews = () => {
 
-    const[news , setNews] = useState([]);
+    const[news , setNews] = useState(null);
     const[loading, setLoading] = useState(true);
     const { id } = useParams()
 
@@ -15,7 +15,6 @@ const DetailedNews = () => {
         const fetchDetailedNews = async() =>{
             try{
                 const news = await getDetailedNews(id);
-                console.log('Raw API response:', news); 
                 setNews(news);
             } catch(error) {
                 console.error('Failed to fetch detailes for news', error);
@@ -95,6 +94,12 @@ const DetailedNews = () => {
                 </div>
             ) : (
                 <div>
+
+                    <p
+                        className='text-3xl font-medium text-primary m-10 md:m-20'
+                    >
+                        Bu haber şu anda görüntülenemiyor.
+                    </p>
 
                 </div>
             )}
