@@ -12,10 +12,10 @@ export const getDoctors = async() => {
 
 export const getDetailedDoctor = async(doctorId) => {
     try{
-        const response = await api.get(`doctors/${doctorId}/`)
+        const response = await api.get(`doctors/${doctorId}/`);
         return response.data;
     }catch(error){
-        console.error("Error fetching the details for teh specific doctor:", error);
+        console.error("Error fetching the details for the specific doctor:", error);
         throw error;
     }
 };
