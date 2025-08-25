@@ -50,48 +50,53 @@ const DetailedDoctors = () => {
 
                 ): doctor ?(
 
-                    <div>
+                    <div className=' m-12 md:m-16'>
 
-                        <div>
-                            <div>
+                        <div
+                            className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-16 items-start'
+                        >
+                            <div 
+                                className='bg-primary/5 rounded col-span-1 flex flex-col items-center p-4'
+                            >
                                 <img
                                     src={doctor.image}
                                     alt="Hekimin fotoğrafı"
                                     loading='lazy'
-                                    className=''
+                                    className='w-full h-full object-cover rounded'
                                 />
 
                                 <div>
-                                    <h1>{doctor.name}</h1>
-                                    <h2>{doctor.unit.name}</h2>
+                                    <h1 className='font-semibold text-xl pt-2 text-primary'>{doctor.name}</h1>
+                                    <h2 className='text-lg font-medium text-primary/80'>{doctor.unit.name}</h2>
                                 </div>
                                 
 
                             </div>
 
 
-                            <div>
+                            <div
+                                className='col-span-1 md:col-span-2 lg:col-span-3 text-primary space-y-10 lg:px-36 '
+                            >
                                 
-                                <h1>Hekim Hakkında</h1>
-                                
+                                <h1 className=' pb-4 text-2xl md:text-3xl font-semibold border-b-2 border-primary/25'>Hekim Hakkında</h1>
                                 {doctor.education && (
-                                    <div>
-                                        <h1>Eğitim</h1>
-                                        <p className="whitespace-pre-line">{doctor.education}</p>
+                                    <div className='p-2' >
+                                        <h1 className='text-left text-xl md:text-2xl mb-2'>Eğitim</h1>
+                                        <p className="whitespace-pre-line text-left px-10 text-lg md:text-xl pl-6">{doctor.education}</p>
                                     </div>
                                 )}
 
                                 {doctor.experience && (
-                                    <div>
-                                        <h1>Mesleki Deneyim</h1>
-                                        <p className="whitespace-pre-line">{doctor.experience}</p>
+                                    <div className='p-2' >
+                                        <h1 className='text-left text-xl md:text-2xl mb-2'>Mesleki Deneyim</h1>
+                                        <p className="whitespace-pre-line text-left mb:px-10 text-lg md:text-xl pl-6">{doctor.experience}</p>
                                     </div>
                                 )}
 
                                 {doctor.language && (
-                                    <div>
-                                        <h1>Yabancı Dil</h1>
-                                        <p className="whitespace-pre-line">{doctor.language}</p>
+                                    <div className='p-2'>
+                                        <h1 className='text-left text-xl md:text-2xl mb-2' >Yabancı Dil</h1>
+                                        <p className="whitespace-pre-line text-left px-10 text-lg md:text-xl pl-6 ">{doctor.language}</p>
                                     </div>
                                 )}         
 

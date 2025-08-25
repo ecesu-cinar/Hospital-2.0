@@ -54,7 +54,7 @@ const Doctors = () => {
 
                                 {doctors.map( doctor => (
                                     <div
-                                        className='cursor-pointer rounded overflow-hidden bg-primary/10 shadow-lg md:hover:shadow-xl transition '
+                                        className='cursor-pointer rounded overflow-hidden bg-primary/5 shadow-lg md:hover:shadow-xl transition '
                                         key = {doctor.id}
                                         onClick={() => handleDoctorsClick(doctor.id)}
                                     >
