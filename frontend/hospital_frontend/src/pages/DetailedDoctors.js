@@ -15,7 +15,6 @@ const DetailedDoctors = () => {
         const fetchDetailedDoctor = async () =>{
             try{
                 const doctor = await getDetailedDoctor(id);
-                console.log('Raw API response:', doctor); 
                 setDoctor(doctor);
             }catch(error){
                 console.error('Failed to fetch details for a doctor:', error);
@@ -43,7 +42,7 @@ const DetailedDoctors = () => {
                         <p
                             className='text-3xl font-medium text-primary m-10 md:m-20'
                         >
-                            Haber detayları yükleniyor, lütfen bekleyin...
+                            Hekim detayları yükleniyor, lütfen bekleyin...
                         </p>
 
                     </div>
@@ -124,4 +123,4 @@ const DetailedDoctors = () => {
     )
 };
 
-export default DetailedDoctors
+export default DetailedDoctors;

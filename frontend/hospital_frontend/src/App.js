@@ -26,7 +26,7 @@ function App() {
             <Route path="/haberler/:id" element={<DetailedNews />} />
             <Route path="/hakkimizda" element={<AboutUs />} />
             <Route path="/tibbi-birimler" element={<MedicalUnits />} />
-            <Route path="/tibbi-birimler/:id" elemnt={<DetailedMedicalUnits/>}/>
+            <Route path="/tibbi-birimler/:id" element={<DetailedMedicalUnits/>}/>
             <Route path="/hekimler" element={<Doctors />} />
             <Route path="/hekimler/:id" element={<DetailedDoctors />}/>
             <Route path="/iletisim" element={<Contact />} />
