@@ -11,6 +11,7 @@ import DetailedMedicalUnits from './pages/DetailedMedicalUnits'
 import Doctors from './pages/Doctors';
 import DetailedDoctors from './pages/DetailedDoctors'
 import Contact from './pages/Contact';
+import PageNotFound from './pages/PageNotFound';
 import '@splidejs/splide/css';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             <Route path="/hekimler" element={<Doctors />} />
             <Route path="/hekimler/:id" element={<DetailedDoctors />}/>
             <Route path="/iletisim" element={<Contact />} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </main>
         <Footer />
