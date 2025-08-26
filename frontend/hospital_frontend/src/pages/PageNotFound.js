@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const PageNotFound = () => {
     return(
         <div className='bg-primary/5 text-primary flex items-center justify-center' >
-            <div className='grid grid-cols-1 md:grid-cols-2 px-20 py-40 gap-14 md:gap-10'>
+            <div className='grid grid-cols-1 md:grid-cols-2 px-20 py-40 gap-14 md:gap-10 lg:gap-32'>
                 <div>
                     <h1 className='flex text-9xl font-bold text-center items-center justify-center'>
                         404
