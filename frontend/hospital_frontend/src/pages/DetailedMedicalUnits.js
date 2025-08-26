@@ -51,40 +51,46 @@ const DetailedMedicalUnits = () => {
                 ): unit ?(
                     <div>
                         <div>
-                            <div>
+                            <div className='my-16 mx-5 md:mx-36'>
+
                                 <img
                                     src={unit.image}
                                     alt="Tıbbi birimin fotoğrafı"
                                     loading='lazy'
                                     className='w-full h-96 object-cover rounded'
                                 />
+
                             </div>
 
                             <div>
-                                <h1>{unit.name}</h1>
+                                <h1 className='pb-5 text-3xl lg:text-4xl font-bold border-b-4 border-primary/25 md:mx-52 mx-16 text-primary' >{unit.name}</h1>
                             </div>
                             
                         </div>
 
-                        <div>
+                        <div className='text-primary'>
                             <div>
                                 <p
-                                    className='whitespace-pre-line'
+                                    className='whitespace-pre-line py-8 md:py-10 px-10 text-lg md:px-16 lg:px-64 md:text-xl lg:text-2xl'
                                 >
                                     {unit.description}
                                 </p>
 
                             </div>
 
-                            <div>
-                                <h1>
-                                    Birim Doktorlarmız
+                            <div className='pb-5 md:pb-10'>
+                                <h1
+                                    className='text-2xl lg:text-3xl font-semibold pb-3'
+                                >
+                                    Birim Doktorlarımız
                                 </h1>
 
-                                <div>
+                                <div
+                                    className='text-lg md:text-xl lg:text-2xl p-2 md:p-4'
+                                >
                                     {unit.doctors.map((doctor) => (
                                         <div key={doctor.id}>
-                                        <Link to={`/hekimler/${doctor.id}`}>{doctor.name}</Link>
+                                        <Link to={`/hekimler/${doctor.id}`}> - {doctor.name}</Link>
                                         </div>
                                     ))}
                                 </div>
