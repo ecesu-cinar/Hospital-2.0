@@ -1,9 +1,14 @@
 from django.shortcuts import render
 from rest_framework import generics
 from .models import MedicalUnit, Doctor, Keyword, News, GalleryImage
-from .serializers import MedicalUnitSerializer, DetailedMedicalUnitSerializer, DoctorSerializer, DetailedDoctorSerializer, NewsSerializer, DetailedNewsSerializer, GalleryImageSerializer
+from .serializers import MedicalUnitSerializer, DetailedMedicalUnitSerializer, DoctorSerializer, DetailedDoctorSerializer, NewsSerializer, DetailedNewsSerializer, GalleryImageSerializer,  UserSerializer
+from rest_framework.permissions import IsAdminUser
+from django.contrib.auth.models import User
+from rest_framework.response import Response
 
 # Create your views here
+
+# Costumer side
 
 class MedicalUnitListView(generics.ListAPIView):
     queryset = MedicalUnit.objects.all()
@@ -40,3 +45,83 @@ class GalleryImageListView(generics.ListAPIView):
     queryset = GalleryImage.objects.all()
     serializer_class = GalleryImageSerializer 
 
+#Admin side
+
+class AdminMedicalUnitListView(generics.ListCreateAPIView):
+    queryset = MedicalUnit.objects.all()
+    serializer_class = MedicalUnitSerializer
+    permission_classes = [IsAdminUser] 
+
+class AdminDetailedMedicalUnitView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = MedicalUnit.objects.all()
+    serializer_class = DetailedMedicalUnitSerializer
+    permission_classes = [IsAdminUser] 
+
+class AdminDoctorListView(generics.ListCreateAPIView):
+    queryset = Doctor.objects.all()
+    serializer_class = DoctorSerializer
+    permission_classes = [IsAdminUser] 
+
+class AdminDetailedDoctorView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Doctor.objects.all()
+    serializer_class = DetailedDoctorSerializer
+    permission_classes = [IsAdminUser] 
+
+class AdminNewsListView(generics.ListCreateAPIView):
+    queryset = News.objects.all()
+    serializer_class = NewsSerializer
+    permission_classes = [IsAdminUser] 
+
+class AdminDetailedNewsView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = News.objects.all()
+    serializer_class = DetailedNewsSerializer
+    permission_classes = [IsAdminUser] 
+
+class AdminGalleryImageListView(generics.ListCreateAPIView):
+    queryset = GalleryImage.objects.all()
+    serializer_class = GalleryImageSerializer
+    permission_classes = [IsAdminUser] 
+
+class AdminDetailedGalleryImageView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = GalleryImage.objects.all()
+    serializer_class = GalleryImageSerializer
+    permission_classes = [IsAdminUser] 
+
+#for super-user whatever that means
+
+class SuperAdminUserListView(generics.ListCreateAPIView):
+    queryset = User.objects.filter(is_staff=True)  
+    serializer_class = UserSerializer  
+    permission_classes = [IsAdminUser]  
+    
+    def get(self, request, *args, **kwargs):
+        if not request.user.is_superuser:
+            return Response({"error": "Only superusers can view admin accounts"}, status=403)
+        return super().get(request, *args, **kwargs)
+    
+    def post(self, request, *args, **kwargs):
+        if not request.user.is_superuser:
+            return Response({"error": "Only superusers can create admin accounts"}, status=403)
+        return super().post(request, *args, **kwargs)
+
+
+class SuperAdminUserDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.filter(is_staff=True)
+    serializer_class = UserSerializer
+    permission_classes = [IsAdminUser]
+    
+    def get(self, request, *args, **kwargs):
+        if not request.user.is_superuser:
+            return Response({"error": "Only superusers can view admin details"}, status=403)
+        return super().get(request, *args, **kwargs)
+    
+    def put(self, request, *args, **kwargs):
+        if not request.user.is_superuser:
+            return Response({"error": "Only superusers can update admin accounts"}, status=403)
+        return super().put(request, *args, **kwargs)
+    
+    def delete(self, request, *args, **kwargs):
+        if not request.user.is_superuser:
+            return Response({"error": "Only superusers can delete admin accounts"}, status=403)
+        return super().delete(request, *args, **kwargs)
+    
