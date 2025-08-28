@@ -10,6 +10,9 @@ from .views import (
     AdminGalleryImageListView, AdminDetailedGalleryImageView,
     SuperAdminUserListView, SuperAdminUserDetailView
 )
+from rest_framework_simplejwt.views import TokenRefreshView
+from .views import RateLimitedTokenObtainPairView
+
 
 urlpatterns = [
 
@@ -39,9 +42,15 @@ urlpatterns = [
     path('dashboard/gallery-images/', AdminGalleryImageListView.as_view(), name='admin-gallery-images'),
     path('dashboard/gallery-images/<int:pk>/', AdminDetailedGalleryImageView.as_view(), name='admin-gallery-images-detail'),
 
-    # Super-admin urls wahtever that means
+    # Super-admin urls whatever that means
 
     path('dashboard/users/', SuperAdminUserListView.as_view(), name='admin-users'),
     path('dashboard/users/<int:pk>/', SuperAdminUserDetailView.as_view(), name='admin-users-detail'),
+
+    #JWT Authentication
+
+    path('auth/login/', RateLimitedTokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('auth/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+
 
 ]

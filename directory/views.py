@@ -5,6 +5,9 @@ from .serializers import MedicalUnitSerializer, DetailedMedicalUnitSerializer, D
 from rest_framework.permissions import IsAdminUser
 from django.contrib.auth.models import User
 from rest_framework.response import Response
+from django_ratelimit.decorators import ratelimit
+from django.utils.decorators import method_decorator
+from rest_framework_simplejwt.views import TokenObtainPairView
 
 # Create your views here
 
@@ -125,3 +128,7 @@ class SuperAdminUserDetailView(generics.RetrieveUpdateDestroyAPIView):
             return Response({"error": "Only superusers can delete admin accounts"}, status=403)
         return super().delete(request, *args, **kwargs)
     
+#rate limit
+@method_decorator(ratelimit(key='ip', rate='5/15m', method='POST'), name='post')
+class RateLimitedTokenObtainPairView(TokenObtainPairView):
+    pass
