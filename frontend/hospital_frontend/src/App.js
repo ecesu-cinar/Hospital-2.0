@@ -12,6 +12,10 @@ import Doctors from './pages/Doctors';
 import DetailedDoctors from './pages/DetailedDoctors'
 import Contact from './pages/Contact';
 import PageNotFound from './pages/PageNotFound';
+
+import AdminLogin from './pages/admin/AdminLogin';
+import AdminApp from './components/AdminApp';
+
 import '@splidejs/splide/css';
 
 function App() {
@@ -22,19 +26,37 @@ function App() {
         <Navbar />
         <main>
           <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/haberler" element={<News />} />
-            <Route path="/haberler/:id" element={<DetailedNews />} />
-            <Route path="/hakkimizda" element={<AboutUs />} />
-            <Route path="/tibbi-birimler" element={<MedicalUnits />} />
-            <Route path="/tibbi-birimler/:id" element={<DetailedMedicalUnits/>}/>
-            <Route path="/hekimler" element={<Doctors />} />
-            <Route path="/hekimler/:id" element={<DetailedDoctors />}/>
-            <Route path="/iletisim" element={<Contact />} />
-            <Route path="*" element={<PageNotFound />} />
+          {/* Admin routes no navbar or footer */}
+          <Route path="/dashboard" element={<AdminLogin />} />
+          <Route path="/dashboard/*" element={<AdminApp />} /> {/* Change this cuz like wtfff
+           */}
+          
+          {/* Customer routes with navbar and footer */}
+          <Route path="*" element={
+            <>
+              <Navbar />
+              <main>
+                <Routes>
+                  <Route path="/" element={<Homepage />} />
+                  <Route path="/haberler" element={<News />} />
+                  <Route path="/haberler/:id" element={<DetailedNews />} />
+                  <Route path="/hakkimizda" element={<AboutUs />} />
+                  <Route path="/tibbi-birimler" element={<MedicalUnits />} />
+                  <Route path="/tibbi-birimler/:id" element={<DetailedMedicalUnits/>}/>
+                  <Route path="/hekimler" element={<Doctors />} />
+                  <Route path="/hekimler/:id" element={<DetailedDoctors />}/>
+                  <Route path="/iletisim" element={<Contact />} />
+                  <Route path="*" element={<PageNotFound />} />
+                </Routes>
+              </main>
+              <Footer />
+            </>
+          } />
           </Routes>
         </main>
         <Footer />
+
+
       </div>
     </Router>
   );
