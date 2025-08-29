@@ -14,7 +14,7 @@ import Contact from './pages/Contact';
 import PageNotFound from './pages/PageNotFound';
 
 import AdminLogin from './pages/admin/AdminLogin';
-import AdminApp from './components/AdminApp';
+import AdminPanel from './pages/admin/AdminPanel';
 
 import '@splidejs/splide/css';
 
@@ -23,12 +23,11 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />
         <main>
           <Routes>
           {/* Admin routes no navbar or footer */}
           <Route path="/dashboard" element={<AdminLogin />} />
-          <Route path="/dashboard/*" element={<AdminApp />} /> {/* Change this cuz like wtfff
+          <Route path="/dashboard/*" element={<AdminPanel />} /> {/* Change this cuz like wtfff
            */}
           
           {/* Customer routes with navbar and footer */}
@@ -54,9 +53,6 @@ function App() {
           } />
           </Routes>
         </main>
-        <Footer />
-
-
       </div>
     </Router>
   );
