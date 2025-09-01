@@ -9,7 +9,7 @@ const AdminPanel = () => {
     }
 
     return (
-    <div className=''>
+    <div className='text-xl'>
         <h1>Admin Panel</h1>
         <p>Welcome to the admin dashboard!</p>
     </div>
