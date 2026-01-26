@@ -29,11 +29,11 @@ const Footer = () => {
                 </ul>
 
                 <p className='text-center text-xs md:text-base md:pt-4'>
-                    Son Güncelleme: 07.08.2025 / Editör: Eda Ecesu ÇINAR
+                    Son Güncelleme: 26.01.2026 / Editör: Eda Ecesu ÇINAR
                 </p>
 
                 <p className='text-center text-xs md:text-base pb-3'>
-                    İletişim: ecesu.cinar24@gmail.com
+                    Editör İletişim: ecesu.cinar24@gmail.com
                 </p>
 
             </div>

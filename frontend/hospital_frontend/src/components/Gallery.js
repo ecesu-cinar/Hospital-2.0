@@ -74,7 +74,7 @@ const Gallery = () => {
                 </div>
             ):(
                 <p 
-                    className='text-3xl font-medium text-white mx-20 my-20'
+                    className='text-3xl font-medium text-white mx-20 my-20 pb-20'
                 >
                     Şu anda görüntülenecek haber bulunamadı.
                 </p>
