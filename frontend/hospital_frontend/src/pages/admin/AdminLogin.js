@@ -49,7 +49,7 @@ const AdminLogin = () => {
                         className=""
                     />
 
-                    <h2> Özel Akademi Cerrahi Top Merkezi </h2>
+                    <h2> Özel Akademi Cerrahi Tıp Merkezi </h2>
 
                 </div>
 
