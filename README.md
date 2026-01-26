@@ -15,3 +15,5 @@ A better version of my old hospital website that allows patients to get informat
 - **Image Storage:** Cloudinary  
 - **Backend:** Django + Django REST Framework  
 - **Database:** PostgreSQL
+
+## Tech Stack hello
