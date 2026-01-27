@@ -16,6 +16,9 @@ import PageNotFound from './pages/PageNotFound';
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminPanel from './pages/admin/AdminPanel';
 
+import ForgotPassword from "./pages/admin/ForgotPassword";
+
+
 import '@splidejs/splide/css';
 
 function App() {
@@ -29,6 +32,7 @@ function App() {
           <Route path="/dashboard" element={<AdminLogin />} />
           <Route path="/dashboard/*" element={<AdminPanel />} /> {/* Change this cuz like wtfff
            */}
+          <Route path="/forgot-password" element={<ForgotPassword />} />
           
           {/* Customer routes with navbar and footer */}
           <Route path="*" element={
