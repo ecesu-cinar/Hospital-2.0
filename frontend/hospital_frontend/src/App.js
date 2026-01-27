@@ -15,9 +15,12 @@ import PageNotFound from './pages/PageNotFound';
 
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminPanel from './pages/admin/AdminPanel';
+import ProtectedRoute from './components/ProtectedRoute';
 
 import ForgotPassword from "./pages/admin/ForgotPassword";
 
+import AdminNavbar from './components/AdminNavbar';
+import Settings from './pages/admin/Settings';
 
 import '@splidejs/splide/css';
 
@@ -30,9 +33,22 @@ function App() {
           <Routes>
           {/* Admin routes no navbar or footer */}
           <Route path="/dashboard" element={<AdminLogin />} />
-          <Route path="/dashboard/*" element={<AdminPanel />} /> {/* Change this cuz like wtfff
-           */}
           <Route path="/forgot-password" element={<ForgotPassword />} />
+          
+          
+          <Route path="/dashboard/*" element={
+              <ProtectedRoute>
+                <>
+                  <AdminNavbar />
+                  <main>
+                    <Routes>
+                      <Route path="/admin-panel" element={<AdminPanel />} />
+                      <Route path="/ayarlar" element={<Settings />} />
+                    </Routes>
+                  </main>
+                </>
+              </ProtectedRoute>
+            } />
           
           {/* Customer routes with navbar and footer */}
           <Route path="*" element={
