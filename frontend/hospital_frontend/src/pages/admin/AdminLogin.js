@@ -32,7 +32,7 @@ const AdminLogin = () => {
             localStorage.setItem('access_token', response.access);
             localStorage.setItem('refresh_token', response.refresh);
 
-            navigate('/dashboard/admin-panel');
+            navigate('/admin/panel');
         }catch(error){
             setError('Invalid username or password');
         } finally {

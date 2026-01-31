@@ -13,7 +13,7 @@ const Navbar = () => {
         localStorage.removeItem('refresh_token');
         
         // Redirect to login page
-        navigate('/dashboard');
+        navigate('/login');
     };
 
     return(
@@ -33,7 +33,7 @@ const Navbar = () => {
                 {/* Links */}
                 <ul className="space-x-8 font-medium text-gl hidden md:flex">
                     <li>
-                        <a href="/dashboard/ayarlar" className="text-third hover:text-secondary relative group transition-colors duration-300">
+                        <a href="/admin/ayarlar" className="text-third hover:text-secondary relative group transition-colors duration-300">
                             Ayarlar
                             <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300 ease-out"></span>
 
@@ -60,7 +60,7 @@ const Navbar = () => {
             <div className={` text-right  ease-in-out md:hidden transition-all duration-150 ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
                 <ul className="px-4 py-4 space-y-4  border-t">
                     <li>
-                        <a href="/dashboard/ayarlar" className="block text-third hover:text-secondary">
+                        <a href="/admin/ayarlar" className="block text-third hover:text-secondary">
                             Ayarlar
                         </a>
                     </li>

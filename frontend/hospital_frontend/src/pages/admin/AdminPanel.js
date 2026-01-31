@@ -5,7 +5,7 @@ const AdminPanel = () => {
     const token = localStorage.getItem('access_token');
     
     if (!token) {
-        return <Navigate to="/dashboard" replace />;
+        return <Navigate to="/login" replace />;
     }
 
     return (

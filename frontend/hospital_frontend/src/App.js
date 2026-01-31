@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import './App.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -28,22 +29,23 @@ function App() {
   
   return (
     <Router>
+      <Toaster position="top-right" />
       <div className="App">
         <main>
           <Routes>
           {/* Admin routes no navbar or footer */}
-          <Route path="/dashboard" element={<AdminLogin />} />
+          <Route path="/login" element={<AdminLogin />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           
           
-          <Route path="/dashboard/*" element={
+          <Route path="/admin/*" element={
               <ProtectedRoute>
                 <>
                   <AdminNavbar />
                   <main>
                     <Routes>
-                      <Route path="/admin-panel" element={<AdminPanel />} />
-                      <Route path="/ayarlar" element={<Settings />} />
+                      <Route path="panel" element={<AdminPanel />} />
+                      <Route path="ayarlar" element={<Settings />} />
                     </Routes>
                   </main>
                 </>
