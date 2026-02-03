@@ -36,8 +36,6 @@ const AdminLogin = () => {
             
             // Store user info (this comes from our custom serializer)
             localStorage.setItem('user', JSON.stringify(response.user));
-            console.log('Login response:', response);
-            console.log('Decoded token:', jwtDecode(response.access));
             navigate('/admin/panel');
         }catch(error){
             setError(error.response?.data?.detail || 'Giriş başarısız. Lütfen bilgilerinizi kontrol edin.');
