@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { loginAuth } from '../../api/LoginApi'
 import logo from '../../assets/logos/logo.png';
-import { jwtDecode } from 'jwt-decode';
 
 
 const AdminLogin = () => {
