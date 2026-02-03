@@ -2,6 +2,7 @@ from rest_framework import serializers
 from .models import MedicalUnit , Doctor , Keyword , News , GalleryImage
 import requests
 from django.contrib.auth.models import User
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 class MedicalUnitSerializer(serializers.ModelSerializer):
     class Meta:
@@ -167,3 +168,30 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'username', 'email', 'first_name', 'last_name', 'is_staff', 'is_superuser']
+
+class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
+    @classmethod
+    def get_token(cls, user):
+        token = super().get_token(user)
+        
+        # Add custom claims to the token
+        token['is_superuser'] = user.is_superuser
+        token['is_staff'] = user.is_staff
+        token['username'] = user.username
+        token['user_id'] = user.id
+        
+        return token
+    
+    def validate(self, attrs):
+        data = super().validate(attrs)
+        
+        # Add extra user info to the response (optional, but helpful)
+        data['user'] = {
+            'id': self.user.id,
+            'username': self.user.username,
+            'is_superuser': self.user.is_superuser,
+            'is_staff': self.user.is_staff,
+        }
+        
+        return data
+

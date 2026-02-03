@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { loginAuth } from '../../api/LoginApi'
 import logo from '../../assets/logos/logo.png';
+import { jwtDecode } from 'jwt-decode';
 
 
 const AdminLogin = () => {
@@ -22,16 +23,21 @@ const AdminLogin = () => {
     };
 
     const handleSubmit = async(e) => {
-        e.preventDefault();
-        setLoading(true);
-        setError('');
+    e.preventDefault();
+    setLoading(true);
+    setError('');
 
         try{
             const response = await loginAuth(credentials);
 
+            // Store tokens
             localStorage.setItem('access_token', response.access);
             localStorage.setItem('refresh_token', response.refresh);
-
+            
+            // Store user info (this comes from our custom serializer)
+            localStorage.setItem('user', JSON.stringify(response.user));
+            console.log('Login response:', response);
+            console.log('Decoded token:', jwtDecode(response.access));
             navigate('/admin/panel');
         }catch(error){
             setError(error.response?.data?.detail || 'Giriş başarısız. Lütfen bilgilerinizi kontrol edin.');
