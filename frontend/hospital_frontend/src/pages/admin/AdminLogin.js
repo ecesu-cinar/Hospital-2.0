@@ -34,7 +34,7 @@ const AdminLogin = () => {
 
             navigate('/admin/panel');
         }catch(error){
-            setError('Invalid username or password');
+            setError(error.response?.data?.detail || 'Giriş başarısız. Lütfen bilgilerinizi kontrol edin.');
         } finally {
             setLoading(false);
         }

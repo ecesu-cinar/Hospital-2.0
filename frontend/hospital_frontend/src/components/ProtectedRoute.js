@@ -7,11 +7,10 @@ const ProtectedRoute = ({ children }) => {
   const toastShown = useRef(false);
 
   useEffect(() => {
-    if (!token) {
+    if (!token && !toastShown.current) {
       toast.error('İlk önce giriş yapmalısınız');
       toastShown.current = true;
     }
-
   }, [token]);
 
   if (!token) {
